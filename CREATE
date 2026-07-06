@@ -1,0 +1,38 @@
+create database hindustan;
+use hindustan;
+
+create table batch105(id int,name varchar(10));
+
+insert into batch105 values(100,'mohan');
+insert into batch105 values(101,'kumar');
+insert into batch105 values(102,'faizur');
+
+select * from batch105;
+
+create table b1(id int primary key,name char(10));
+
+desc b1;
+
+insert into b1 values(100,'rahman');
+insert into b1 values(100,'sanjay');
+insert into b1 values(102,'fazil');
+
+create table b2(id int auto_increment primary key,name char(10));
+
+desc b2;
+
+create table b3(id int,name char(10) default 'Raju');
+
+desc b3;
+
+insert into b3 values(1000,'prasath');
+insert into b3 values(1001,'gokul');
+insert into b3 values(1002,'jason');
+
+select * from b3;
+
+create table b4 select * from b3;
+
+select * from b4;
+
+create table b5 select * from b2 where 1=0;
