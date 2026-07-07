@@ -1,0 +1,16 @@
+SELECT * FROM sch;
+select name,grade from sch;
+select *from sch order by marks;
+select *from sch order by marks desc;
+select *from sch order by marks ,dept;
+select *from sch order by marks limit 1;
+select count(*) from sch;
+select count(*) from sch where grade='S';
+select avg(marks) from sch;
+select sum(marks) from sch;
+select name ,case
+ when grade="S" then "first class with distintion"
+ when grade="A+" then "first class"
+ else "pass"
+ end as status from sch;
+select id,name from sch as AVERAGE where marks<65;
