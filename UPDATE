@@ -1,0 +1,45 @@
+show databases;
+create database student;
+use student;
+create table sch(id int,name varchar(10),marks int,place varchar(15));
+insert into sch values (01,"senthil",86,"chennai");
+insert into sch values (02,"guna",64,"tambaram");
+insert into sch values (03,"vealu",72,"vada palani");
+insert into sch values (04,"thambi",96,"1000 lights");
+insert into sch values (05,"jawa palani",45,"viyasarpadi");
+insert into sch values (06,"anbu",99,"kasimeadu");
+insert into sch values (07,"padma",92,"kasimeadu");
+insert into sch values (08,"kanna",35,"kasimeadu");
+insert into sch values (09,"chandra",54,"royapetti");
+insert into sch values (10,"rajan",86,"royapetti");
+select*from sch;
+alter table sch modify column name varchar(20);
+update sch set marks=50 where id =08;
+set sql_safe_updates=0;
+alter table sch add column Batch int;
+update sch set Batch=2023;
+alter table sch add column dept varchar(12);
+update sch set dept="mech" where place="tambaram" "vada palani";
+select dept from sch;
+update sch set dept="fisheries" where place="kasimeadu";
+update sch set dept="mech" where place= "vada palani";
+update sch set dept="cse" where name="senthil";
+update sch set dept="automob" where name="guna";
+update sch set dept="catering" where name="thambi";
+update sch set dept="fashion" where place="royapetti";
+update sch set dept="aero" where name="jawa palani";
+alter table sch add column grade varchar(1);
+alter table sch modify column grade varchar(2);
+update sch set grade = case
+     when marks >95 then "S"
+     when marks >85 then "A+"
+     when marks >80 then "A"
+     when marks >75 then "B+"
+     when marks >60 then "C"
+     else "F"
+     end;
+select *from sch;
+update sch set marks =if (name="chandra" and marks=54,"F","P");
+update sch set dept = replace(dept "fasion","tailor");
+alter table sch add column DOB("date");
+update sch set place=substring(1,4);
